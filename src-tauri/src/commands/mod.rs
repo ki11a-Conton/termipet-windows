@@ -1,0 +1,9 @@
+pub mod window;
+pub mod pet;
+pub mod chat;
+pub mod settings;
+pub mod terminal;
+pub mod system;
+pub mod ai_usage;
+pub mod timer;
+pub mod claude_desktop;

@@ -1,0 +1,72 @@
+.pet-settings h2 {
+  margin-bottom: 24px;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: var(--color-surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pet-card:hover {
+  background: var(--color-surface-hover);
+}
+
+.pet-card.selected {
+  border-color: var(--color-primary);
+}
+
+.pet-preview {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.pet-emoji {
+  font-size: 48px;
+}
+
+.selected-indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border-radius: 50%;
+  color: white;
+}
+
+.pet-info {
+  text-align: center;
+}
+
+.pet-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pet-info p {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}

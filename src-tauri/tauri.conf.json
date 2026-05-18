@@ -1,0 +1,116 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "TermiPet",
+  "version": "0.1.0",
+  "identifier": "com.termipet.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "pet",
+        "title": "TermiPet",
+        "width": 200,
+        "height": 200,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "closable": true,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "center": false,
+        "x": null,
+        "y": null,
+        "visible": true,
+        "focus": false
+      },
+      {
+        "label": "chat",
+        "title": "Chat with Pet",
+        "width": 400,
+        "height": 600,
+        "resizable": true,
+        "maximizable": false,
+        "minimizable": true,
+        "closable": true,
+        "decorations": true,
+        "transparent": false,
+        "alwaysOnTop": true,
+        "visible": false,
+        "center": true
+      },
+      {
+        "label": "settings",
+        "title": "Settings",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "maximizable": true,
+        "minimizable": true,
+        "closable": true,
+        "decorations": true,
+        "transparent": false,
+        "alwaysOnTop": false,
+        "visible": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "default",
+          "windows": ["pet", "chat", "settings"],
+          "permissions": [
+            "core:default",
+            "shell:allow-open",
+            "store:default",
+            "http:default",
+            "notification:default",
+            "os:default"
+          ]
+        }
+      ]
+    },
+    "trayIcon": {
+      "id": "main-tray",
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true,
+      "menu": true,
+      "tooltip": "TermiPet",
+      "title": "TermiPet"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "perMachine",
+        "languages": ["SimpChinese", "English", "Japanese", "Korean"]
+      }
+    }
+  },
+  "plugins": {
+    "store": {
+      "freezeOnError": true
+    }
+  }
+}

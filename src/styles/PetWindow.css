@@ -1,0 +1,84 @@
+.pet-window {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pet-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  padding: 20px;
+}
+
+.pet-container:active {
+  cursor: grabbing;
+}
+
+.pet-sprite {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.sprite-frame {
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.pet-emoji-fallback {
+  font-size: 48px;
+  line-height: 1;
+}
+
+/* Floating Toolbar */
+.floating-toolbar {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+  white-space: nowrap;
+}
+
+.toolbar-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.toolbar-button:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-primary);
+}
+
+.toolbar-label {
+  font-size: 10px;
+  opacity: 0.8;
+}

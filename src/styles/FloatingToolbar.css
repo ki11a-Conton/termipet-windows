@@ -1,0 +1,38 @@
+.floating-toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  background: rgba(26, 26, 46, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  transition: all 0.15s ease;
+  min-width: 50px;
+}
+
+.toolbar-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #6366f1;
+}
+
+.toolbar-button:active {
+  transform: scale(0.95);
+}
+
+.toolbar-label {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.9;
+}

@@ -1,0 +1,87 @@
+{
+  "id": "terminal-cat",
+  "displayName": "Terminal Cat",
+  "description": "A cute cat that accompanies you while coding. The official mascot of TermiPet.",
+  "author": "TermiPet Team",
+  "version": "1.0.0",
+  "spritesheetPath": "spritesheet.webp",
+  "animations": [
+    {
+      "name": "idle",
+      "row": 0,
+      "frames": 4,
+      "frameDurationMs": 250,
+      "description": "Default idle animation"
+    },
+    {
+      "name": "running",
+      "row": 1,
+      "frames": 6,
+      "frameDurationMs": 100,
+      "description": "Running animation"
+    },
+    {
+      "name": "moving",
+      "row": 2,
+      "frames": 4,
+      "frameDurationMs": 150,
+      "description": "Walking/moving animation"
+    },
+    {
+      "name": "happy",
+      "row": 3,
+      "frames": 4,
+      "frameDurationMs": 200,
+      "description": "Happy expression"
+    },
+    {
+      "name": "alert",
+      "row": 4,
+      "frames": 2,
+      "frameDurationMs": 500,
+      "description": "Alert/warning expression"
+    },
+    {
+      "name": "error",
+      "row": 5,
+      "frames": 4,
+      "frameDurationMs": 200,
+      "description": "Error/sad expression"
+    },
+    {
+      "name": "sleeping",
+      "row": 6,
+      "frames": 4,
+      "frameDurationMs": 500,
+      "description": "Sleeping animation"
+    },
+    {
+      "name": "thinking",
+      "row": 7,
+      "frames": 4,
+      "frameDurationMs": 300,
+      "description": "Thinking animation"
+    },
+    {
+      "name": "celebrating",
+      "row": 8,
+      "frames": 6,
+      "frameDurationMs": 150,
+      "description": "Celebration animation"
+    }
+  ],
+  "defaultAnimation": "idle",
+  "interactions": {
+    "click": "happy",
+    "doubleClick": "celebrating",
+    "hover": "alert"
+  },
+  "sounds": {
+    "enabled": false
+  },
+  "metadata": {
+    "created": "2024-01-01",
+    "license": "MIT",
+    "tags": ["cat", "cute", "default", "mascot"]
+  }
+}
