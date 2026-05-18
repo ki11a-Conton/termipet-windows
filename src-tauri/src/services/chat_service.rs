@@ -119,7 +119,7 @@ impl ChatService {
         config: &ModelConfig,
     ) -> anyhow::Result<ChatMessage> {
         // Gemini API implementation
-        todo!("Implement Gemini API")
+        Err(anyhow::anyhow!("Gemini API is not yet supported"))
     }
     
     async fn send_custom_message(

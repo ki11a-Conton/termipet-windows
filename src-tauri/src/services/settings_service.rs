@@ -21,13 +21,7 @@ impl SettingsService {
     }
     
     pub async fn get_settings(&self) -> anyhow::Result<AppSettings> {
-        let store_path = self.get_store_path();
-        
-        if !store_path.exists() {
-            return Ok(AppSettings::default());
-        }
-        
-        let store = StoreBuilder::new(&self.app, store_path).build()?;
+        let store = StoreBuilder::new(&self.app, "settings.json").build()?;
         
         match store.get("settings") {
             Some(value) => {
@@ -39,8 +33,7 @@ impl SettingsService {
     }
     
     pub async fn save_settings(&self, settings: &AppSettings) -> anyhow::Result<()> {
-        let store_path = self.get_store_path();
-        let store = StoreBuilder::new(&self.app, store_path).build()?;
+        let store = StoreBuilder::new(&self.app, "settings.json").build()?;
         
         let value = serde_json::to_value(settings)?;
         store.set("settings", value);
@@ -54,7 +47,7 @@ impl SettingsService {
         #[cfg(windows)]
         {
             use windows::Win32::Security::Credentials::{
-                CredReadW, CRED_TYPE_GENERIC, CREDENTIALW, CRED_TYPE,
+                CredReadW, CRED_TYPE_GENERIC, CREDENTIALW,
             };
             use windows::core::PCWSTR;
             use std::ffi::OsStr;
@@ -83,7 +76,9 @@ impl SettingsService {
                         credential.CredentialBlobSize as usize,
                     );
                     let password = String::from_utf8_lossy(password_slice);
-                    return Ok(Some(password.to_string()));
+                    let password_str = password.to_string();
+                    windows::Win32::Security::Credentials::CredFree(cred as *mut _);
+                    return Ok(Some(password_str));
                 }
             }
         }

@@ -60,13 +60,13 @@ pub fn setup_tray<R: Runtime>(app: &tauri::AppHandle<R>) -> Result<(), Box<dyn s
                     // Start pomodoro timer
                     let handle = app.clone();
                     tauri::async_runtime::spawn(async move {
-                        let _ = handle.emit("start_pomodoro", 25).await;
+                        let _ = handle.emit("start_pomodoro", 25);
                     });
                 }
                 "stop_timer" => {
                     let handle = app.clone();
                     tauri::async_runtime::spawn(async move {
-                        let _ = handle.emit("stop_pomodoro", ()).await;
+                        let _ = handle.emit("stop_pomodoro", ());
                     });
                 }
                 "quit" => {

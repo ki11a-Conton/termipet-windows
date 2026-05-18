@@ -124,7 +124,7 @@ impl ClaudeDesktopService {
                         // Get process name
                         let process_name = get_process_name_from_hwnd(hwnd);
                         
-                        **result = Some(TerminalInfo {
+                        *result = Some(TerminalInfo {
                             id: format!("{}", hwnd.0),
                             name: "Claude Code".to_string(),
                             process_name,

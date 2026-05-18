@@ -65,18 +65,6 @@ impl TimerService {
     }
 }
 
-impl Clone for TimerState {
-    fn clone(&self) -> Self {
-        Self {
-            active: self.active,
-            mode: self.mode.clone(),
-            remaining_seconds: self.remaining_seconds,
-            total_seconds: self.total_seconds,
-            started_at: self.started_at,
-        }
-    }
-}
-
 pub fn init(app: &AppHandle) {
     let service = TimerService::new();
     app.manage(service);

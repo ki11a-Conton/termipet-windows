@@ -31,7 +31,7 @@ fn main() {
             // Initialize system tray
             #[cfg(desktop)]
             {
-                setup_tray(app)?;
+                setup_tray(app.handle())?;
             }
             
             // Initialize services
